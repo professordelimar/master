@@ -1,0 +1,11 @@
+numpy
+scipy
+matplotlib
+pandas
+jupyter
+basemap
+
+# Legacy note:
+# Some historical testing code references older packages or APIs that may no
+# longer be directly compatible with current Python environments.
+# These are intentionally not forced as modern installation requirements.
