@@ -23,7 +23,7 @@ def my_continuation(x, y, data, level):
     if x.shape != y.shape != data.shape:
         raise ValueError("All inputs must have the same shape!")
 
-    if H == 0.:
+    if level == 0.:
         # No continuation will be applied
         res = data
     else:
@@ -131,7 +131,7 @@ def my_tilt(x, y, data):
     return tilt.reshape(tilt.size)
 
 def my_thdr(x, y, data):
-     '''
+    '''
     Return the total horizontal derivative of tilt angle data.
     Inputs:
     x - numpy 2D array - grid values in x direction
@@ -140,18 +140,16 @@ def my_thdr(x, y, data):
     
     Output:
     tilt - numpy 2D array - tilt angle for a potential data
-    '''
-    
+    '''  
     # Stablishing some conditions
     if x.shape != y.shape != data.shape:
-        raise ValueError("All inputs must have the same shape!")
-    
+        raise ValueError("All inputs must have same shape!")
     # Calculate of tilt angle
     tilt = my_tilt(x, y, data)
     
     # Calculate the horizontal derivatives
-    dx = derivative.my_xderiv(x, y, tilt, 1)
-    dy = derivative.my_yderiv(x, y, tilt, 1)
+    dx = derivative.my_xderiv(x, y, tilt)
+    dy = derivative.my_yderiv(x, y, tilt)
     
     # Calculate the total horizontal derivative of tilt angle
     thdr = (dx**2 + dy**2)**(0.5)
@@ -203,8 +201,8 @@ def my_thetamap(x, y, data):
         raise ValueError("All inputs must have the same shape!")
     
     # Calculate the horizontal and total gradients
-    hgrad = derivative.horzgrad(x, y, data)
-    tgrad = derivative.totalgrad(x, y, data)
+    hgrad = derivative.my_hgrad(x, y, data)
+    tgrad = derivative.my_totalgrad(x, y, data)
     
     # Theta map calculation
     res = numpy.arccos(hgrad/tgrad)
