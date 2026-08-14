@@ -5,7 +5,7 @@
 # Collaborator: Rodrigo Bijani
 #------------------------------------------------------------------------------------
 import numpy
-from codes import auxiliarsiliars
+from codes import auxiliars
 #------------------------------------------------------------------------------------
 def my_potential(x, y, z, prism, rho):
     '''
@@ -393,12 +393,12 @@ def my_3Dgz(x, y, z, xprism, yprism, top, bottom, deltax, deltay, density):
     # Condition for density
     if density.shape == xprism.shape:
         for k in range(xprism.size):
-            gz += prism_gz(x, y, z, (xprism[k] - deltax/2., xprism[k] + deltax/2., 
+            gz += my_prism_gz(x, y, z, (xprism[k] - deltax/2., xprism[k] + deltax/2., 
                                      yprism[k] - deltay/2., yprism[k] + deltay/2., 
                                      top[k], bottom[k]), density[k])
     else:
         for k in range(xprism.size):
-            gz += prism_gz(x, y, z, (xprism[k] - deltax/2., xprism[k] + deltax/2., 
+            gz += my_prism_gz(x, y, z, (xprism[k] - deltax/2., xprism[k] + deltax/2., 
                                      yprism[k] - deltay/2., yprism[k] + deltay/2., 
                                      top[k], bottom[k]), density)
             
