@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use material from this historical research repository, please cite the repository, the relevant file, and any associated publication."
+title: "Master Codes"
+type: software
+authors:
+  - family-names: "Ribeiro-Filho"
+    given-names: "Nelson"
+repository-code: "https://github.com/professordelimar/master"
+url: "https://github.com/professordelimar/master"
+abstract: "Historical and evolving computational repository containing gravity and magnetic modeling, potential-field processing, equivalent-layer techniques, cross-correlation experiments, dissertation material, real and synthetic geophysical datasets, and manuscript-oriented notebooks."
+keywords:
+  - geophysics
+  - gravity
+  - magnetics
+  - potential-fields
+  - equivalent-layer
+  - cross-correlation
+  - numerical-methods
+  - python
+  - jupyter
+  - research-archive
