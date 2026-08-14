@@ -1,0 +1,55 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables and local configuration
+.env
+.env.*
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Python profiling/cache
+*.prof
+.cache/
+
+# Compiled artifacts
+*.so
+*.dll
+*.dylib
+
+# NOTE:
+# Scientific datasets, notebooks, manuscript data, and historical research
+# outputs already tracked by Git are intentionally NOT ignored.
