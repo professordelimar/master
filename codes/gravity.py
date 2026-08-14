@@ -99,7 +99,7 @@ def my_closedform(phi, h, a = None, f = None, GM = None, omega = None):
     
     Output:
     gamma: array containing the values of normal gravity on the surface of the elipsoid for each geodetic latitude [mGal]
-    '''    
+    '''
     # WSG84
     if a == None:
         a = 6378137.0
