@@ -55,7 +55,6 @@ def my_yderiv(x, y, data, n = 1):
     # Stablishing some conditions
     if x.shape != y.shape != data.shape:
         raise ValueError("All inputs must have same shape!")
-    
     # Condition for the order of the derivative
     if n <= 0.:
         raise ValueError("Order of the derivative must be positive and nonzero!")
@@ -64,7 +63,7 @@ def my_yderiv(x, y, data, n = 1):
         res = data
     else:    
         # Calculate the wavenuber in y direction
-        ky, _ = auxiliars.make_wavenumber(y, x)
+        ky, _ = auxiliars.my_wavenumber(y, x)
     
         # Apply the Fourier transform
         yder = numpy.fft.fft2(data)*((ky*1j)**(n))
@@ -101,7 +100,7 @@ def my_zderiv(x, y, data, n = 1):
         res = data
     else:    
         # Calculate the wavenuber in z direction
-        ky, kx = auxiliars.make_wavenumber(y, x)
+        ky, kx = auxiliars.my_wavenumber(y, x)
     
         # Apply the Fourier transform
         zder = numpy.fft.fft2(data)*(numpy.sqrt(kx**2 + ky**2)**(n))
